@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities -- French apostrophes in educational interface copy */
 "use client";
 
 import dynamic from "next/dynamic";
@@ -28,12 +29,18 @@ export function PythonLab() {
   const exercise = firstLesson.exercises[selected];
 
   useEffect(() => {
-    try {
-      const savedPassed = JSON.parse(localStorage.getItem(PASS_PREFIX) || "[]");
-      if (Array.isArray(savedPassed)) setPassed(savedPassed.filter((v): v is string => typeof v === "string"));
-      const savedCode = localStorage.getItem(CODE_PREFIX + firstLesson.exercises[0].id);
-      if (savedCode !== null) setCode(savedCode);
-    } catch { /* storage disabled or invalid */ }
+    let active = true;
+    // Restore browser state after hydration without synchronously cascading renders.
+    queueMicrotask(() => {
+      if (!active) return;
+      try {
+        const savedPassed: unknown = JSON.parse(localStorage.getItem(PASS_PREFIX) || "[]");
+        if (Array.isArray(savedPassed)) setPassed(savedPassed.filter((v): v is string => typeof v === "string"));
+        const savedCode = localStorage.getItem(CODE_PREFIX + firstLesson.exercises[0].id);
+        if (savedCode !== null) setCode(savedCode);
+      } catch { /* storage disabled or invalid */ }
+    });
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
