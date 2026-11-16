@@ -5,7 +5,7 @@
 > **Vision :** une plateforme mondiale d'apprentissage Python avec un mentor IA temps réel, un laboratoire exécutable et un système d'évaluation qui privilégie l'autonomie. Notre ambition n'est pas un produit déjà réalisé.
 
 ## État du projet
-🚧 **Cadrage / documentation.** Le développement de l'application n'a pas encore commencé. Le dépôt héberge le plan directeur, pas encore une version opérationnelle. Date de référence : 16 novembre 2026.
+🚧 **Prototype en développement.** Socle Next.js/FastAPI et Learning Lab initial ajoutés. Pas encore de déploiement public, d'IA connectée ou d'authentification. La CI valide le code à chaque changement. Date de référence : 16 novembre 2026.
 
 ## Commencer ici
 | Document | Contenu |
@@ -26,7 +26,7 @@
 ## Les 12 modules
 Nova Brain · Code X-Ray · Nova Socratic · Knowledge DNA · Voice Mentor · Error Doctor · Algorithm Lab · Dream-to-Code · Memory Engine · Independence Exam · Classroom · Global Learning.
 
-La plupart sont **planifiés**, pas encore implémentés. Les priorités sont l'éditeur Python, l'exécution sécurisée, les exercices vérifiables et le professeur IA contextualisé.
+Les fonctionnalités avancées sont **planifiées** ; seul un laboratoire débutant avec indices statiques est codé. Les priorités sont l'éditeur Python, l'exécution sécurisée, les exercices vérifiables et le professeur IA contextualisé.
 
 ## Architecture envisagée
 - Web : Next.js, TypeScript, Tailwind CSS, Monaco.
@@ -50,8 +50,17 @@ Détails et checklist dans [ROADMAP.md](docs/ROADMAP.md).
 6. Accessibilité, confidentialité et protection des mineurs dès la conception.
 7. Une fonctionnalité n'est considérée livrée qu'après implémentation et tests.
 
+## Lancer le prototype
+```bash
+npm install
+npm run dev
+# ouvrir http://localhost:3000
+```
+
+API séparée : voir [apps/api/README.md](apps/api/README.md). La progression web est actuellement conservée **uniquement dans le navigateur** ; elle n'est pas synchronisée entre appareils.
+
 ## Prochaine étape
-Initialiser l'application et livrer un **Learning Lab V1** : première leçon, Monaco, Pyodide, console, tests, sauvegarde, tuteur IA avec indices graduels.
+Vérifier la CI et tester le laboratoire en navigateur réel, puis remplacer les indices statiques par une intégration IA sécurisée côté serveur, ajouter de vrais tests d'exercice robustes, authentification et persistance PostgreSQL.
 
 ## Licence
 À définir avant redistribution ou contribution extérieure. Le caractère public du dépôt n'implique pas automatiquement une licence open source.
