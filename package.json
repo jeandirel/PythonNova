@@ -1,0 +1,15 @@
+{
+  "name": "python-nova",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @pythonnova/web",
+    "build": "npm run build -w @pythonnova/web",
+    "lint": "npm run lint -w @pythonnova/web",
+    "typecheck": "npm run typecheck -w @pythonnova/web",
+    "test": "npm run test -w @pythonnova/web"
+  }
+}
