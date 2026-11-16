@@ -10,21 +10,21 @@
 - Les décisions importantes sont consignées dans docs/ARCHITECTURE.md puis ADR si nécessaire.
 
 ## P0 — Fondations techniques
-- [ ] Initialiser monorepo Next.js/TypeScript et FastAPI, config dev reproductible.
+- [x] Initialiser structure Next.js/TypeScript et FastAPI (validation CI en cours).
 - [ ] Design tokens, thème clair/sombre, composants accessibles, responsive.
-- [ ] CI : lint, typecheck, tests, build ; templates PR, protection des secrets.
+- [x] Ajouter workflow CI lint, typecheck, tests, build (résultat à vérifier) ; templates PR et protections des secrets restent à faire.
 - [ ] Schéma initial : utilisateur, leçon, exercice, tentative, progression, projet.
 - [ ] Auth simple ; permissions et parcours anonyme éventuel.
 **Done** : nouveau contributeur démarre le projet et CI valide une application minimale.
 
 ## P1 — Learning Lab V1 (priorité n°1)
-- [ ] Landing et dashboard utiles.
-- [ ] Parcours premier démarrage et leçon « Hello Python ».
-- [ ] Éditeur Monaco avec starter code et autosave.
-- [ ] Exécution Pyodide en Web Worker et console stdout/stderr.
-- [ ] Temps limite/restart worker, indicateurs exécution.
-- [ ] Exercices avec tests déterministes ; feedback clair.
-- [ ] Persistance progression + reprise.
+- [ ] Landing et dashboard complets (premier laboratoire affiché à la racine).
+- [x] Ajouter première leçon « Hello Python » et 3 exercices ; onboarding reste à développer.
+- [x] Éditeur Monaco avec starter code et sauvegarde locale (sans compte).
+- [x] Implémenter Pyodide en Web Worker et console stdout/stderr (validation navigateur en attente).
+- [x] Temps limite 12 s, terminaison worker, indicateurs d'exécution.
+- [ ] Exercices avec tests robustes : vérification de sortie pédagogique disponible, tests cachés serveur absents.
+- [ ] Persistance serveur : sauvegarde/reprise locales disponibles mais pas de compte ni de synchro.
 - [ ] Tutor IA avec API côté serveur et streaming.
 - [ ] Indices graduels et mode « explorer » ; journal d'aide.
 - [ ] E2E : inscription → leçon → code → exécution → correction → reprise.
